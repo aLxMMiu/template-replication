@@ -1,0 +1,69 @@
+/*CSS RESET*/
+* {
+  padding: 0px;
+  margin: 0px;
+}
+/*CSS RESET*/
+
+#header {
+  height: 285px;
+  width: 100%;
+  background: rgb(255, 251, 242);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 251, 242, 1) 0%,
+    rgba(254, 219, 119, 1) 100%
+  );
+}
+#footer {
+  height: 204px;
+  width: 100%;
+  background-image: url(images/footer-bg.gif);
+  background-repeat: repeat-x;
+}
+#menubar {
+  height: 32px;
+  width: 100%;
+  margin: 5 0 5 0;
+  background: rgb(255, 27, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 97, 0, 1) 0%,
+    rgba(255, 120, 5, 1) 50%,
+    rgba(255, 171, 61, 1) 100%
+  );
+  overflow: hidden;
+}
+#menubar::before {
+  position: relative;
+  bottom: 17px;
+  display: block;
+  content: "";
+  border-radius: 100px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  height: inherit;
+  width: inherit;
+}
+#mainbody {
+  width: 100%;
+  height: max-content;
+  background-color: rgb(239);
+  position: relative;
+}
+#column-left {
+  display: inline-block;
+  width: 389px;
+  height: 800px;
+  border: 1px solid blue;
+}
+#column-right {
+  display: inline-block;
+  width: 389px;
+  height: 800px;
+  border: 1px solid blue;
+}
