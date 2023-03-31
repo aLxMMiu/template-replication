@@ -61,3 +61,15 @@
   height: 800px;
   border: 1px solid blue;
 }
+.column.left {
+  border: 1px solid red;
+}
+.menubar ul {
+  list-style-type: none;
+  position: relative;
+  bottom: 30px;
+}
+.menubar li {
+  float: left;
+  display: block;
+}
