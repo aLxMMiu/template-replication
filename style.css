@@ -14,7 +14,7 @@
 .header-content {
   display: block;
   position: absolute;
-  width: 700px;
+  width: 744px;
   left: 50%;
   bottom: 70px;
   transform: translateX(-50%);
@@ -26,7 +26,7 @@
   background-image: url(images/logo.gif);
   width: 372px;
   height: 91px;
-  margin-left: 14px;
+  margin-left: 45px;
 }
 .pagetitle {
   background-image: url(images/header-img1.jpg);
@@ -37,7 +37,7 @@
   display: block;
   height: 32px;
   position: absolute;
-  left: 62.5%;
+  left: 63%;
   bottom: 38px;
   text-align: center;
   transform: translateX(-50%);
@@ -66,7 +66,7 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
-  margin: 12px;
+  margin: 14px;
 }
 .menubar li:hover {
   background-image: url(images/menu-hover.gif);
@@ -85,13 +85,22 @@
   width: 744px;
   height: 800px;
   left: 50%;
+  top: -35px;
   transform: translateX(-50%);
 }
 .column {
   display: inline-block;
-  width: 372px;
+  width: 360px;
   height: 800px;
   background-color: white;
+  margin: 0 1px;
+}
+
+.articletitle {
+  display: block;
+  height: 100px;
+  width: 100%;
+  border: 1px solid blue;
 }
 
 .footer {
