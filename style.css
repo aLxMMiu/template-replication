@@ -32,9 +32,10 @@
 .menubar {
   display: flex;
   height: 32px;
-  justify-content: right;
-  align-items: center;
-  padding-right: 280px;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  top: 215px;
 }
 .menubar ul {
   list-style-type: none;
@@ -60,7 +61,10 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
-  margin: 14px;
+  margin: 0 15px 0 15px;
+}
+.menubar li:first-child a:first-of-type {
+  margin: 0 15px 0 8px;
 }
 .menubar li:hover {
   background-image: url(images/menu-hover.gif);
@@ -75,6 +79,7 @@
   background-color: rgb(239, 239, 239);
 }
 .bodycontent {
+  display: flex;
   position: absolute;
   width: 744px;
   height: 800px;
@@ -83,20 +88,75 @@
   transform: translateX(-50%);
 }
 .column {
-  display: inline-block;
-  width: 360px;
+  width: 310px;
   height: 800px;
+  padding: 20px 0 0 50px;
+}
+.column.right {
   background-color: white;
-  margin: 0 1px;
 }
-
+.article-top {
+  height: 100%;
+  margin-right: 20px;
+}
 .articletitle {
-  display: block;
-  height: 100px;
+  display: flex;
   width: 100%;
-  border: 1px solid blue;
+  align-items: center;
+  margin-bottom: 20px;
 }
+.titleicon {
+  width: 48px;
+  height: 64px;
 
+  flex-shrink: 0;
+}
+#updatesarticletitleicon {
+  background-image: url(images/image1.jpg);
+  background-repeat: no-repeat;
+}
+.articleheading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 20px;
+}
+.heading1 {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 20pt;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+.heading2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #967001;
+}
+.articlecontent h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14pt;
+}
+.articlecontent p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 12pt;
+  color: #666666;
+  hyphens: auto;
+}
+.articlecontent a {
+  float: right;
+  margin-right: 20px;
+}
+.readmore {
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12pt;
+  color: #bf4d02;
+}
 .footer {
   height: 204px;
   width: 100%;
