@@ -5,48 +5,65 @@
 }
 /*CSS RESET*/
 
+@font-face {
+  font-family: "AVGARDD";
+  src: url(/fonts/AVGARDD.TTF);
+}
+@font-face {
+  font-family: "AVGARDN";
+  src: url(/fonts/AVGARDN.TTF);
+}
+@font-face {
+  font-family: "impact_imp";
+  src: url(/fonts/impact.ttf);
+}
+body{
+  background-color: #efefef
+}
 .header {
   height: 285px;
   background-image: url(images/header-bg.jpg);
 }
-.header-content {
+.header__content {
   display: flex;
   justify-content: center;
   align-items: end;
 }
 .logo {
+  position:relative;
+  left:-5px;
   background-image: url(images/logo.gif);
   background-repeat: no-repeat;
   width:50%;
   height: 91px;
 }
-.pagetitle {
+.page__title {
   background-image: url(images/header-img1.jpg);
   background-repeat: no-repeat;
   background-position: 90%;
   width:50%;
   height: 215px;
 }
-.menubar{
+.menu__bar{
   display: flex;
 }
-.menuitems{
+.menu__items{
   width:50%;
 }
 
-.menuitems ul{
+.menu__items ul{
   display: flex;
   list-style: none;
   height:32px;
-  margin-left:10px;
+  margin-left:5px;
   white-space: nowrap;
 }
-.menuitems li{
+.menu__items li{
   display:inline-block;
   height:32px;
   margin:0 15px 0 0;
 }
-.menuitems a{
+.menu__items a{
   display:inline-block;
   line-height:32px;
   text-align: center;
@@ -58,91 +75,96 @@
   color: white;
 }
 
-.menudivider {
+.menu__divider {
   background-image: url(images/menu-devider.gif);
   background-repeat: no-repeat;
   display: inline-block;
   width: 2px;
   height: 32px;
 }
-.menudivider.hidden{
+.menu__divider.hidden{
   display:none;
 }
 
 
-.menubar a:hover {
+.menu__bar a:hover {
   background-image: url(images/menu-hover.gif);
   background-repeat: no-repeat;
   background-position: top;
 }
-.mainbody {
+.main__body {
+  position:relative;
+  top:-33px;
   display: flex;
   justify-content: center;
-  height: 800px;
-  background-color: rgb(239, 239, 239);
+  height: 754px;
 }
-.bodycontent {
-  width: 724px;
-  height: 800px;
+.body__content {
+  display: flex;
+  width: 720px;
 }
 .column {
-  float:inline-start;
+display: flex;
+flex-direction: column;
+justify-content: center;
   width: 50%;
-  height: 800px;
+  padding:20px 40px 0 40px;
 }
 .column.right {
   background-color: white;
+  border-radius: 0 0 10px 10px;
 }
-.articletitle {
+.article__heading {
   display: flex;
   width: 100%;
   align-items: center;
   margin-bottom: 20px;
 }
-.titleicon {
+.title__icon {
   width: 60px;
   height: 71px;
   flex-shrink: 0;
 }
-#updatesarticletitleicon {
+#updates__article__title__icon {
   background-image: url(images/image1.jpg);
   background-repeat: no-repeat;
 }
-.articleheading {
+.article__title {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-left: 10px;
 }
-.heading1 {
+.article__title .title {
   font-family: "Trebuchet MS", sans-serif;
   font-size: 20pt;
   font-weight: bold;
   color: #4d4d4d;
 }
-.heading2 {
+.article__title .subtitle {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
   font-weight: bold;
   color: #967001;
 }
-.articlecontent h1 {
+.article__content h1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
   font-size: 14pt;
+  font-weight: bold;
+  color: #666666;
 }
-.articlecontent p {
+.article__content p {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  font-size: 12pt;
+  font-size: 10pt;
   color: #666666;
-  hyphens: auto;
+  hyphens:auto;
 }
-.articlecontent a {
+
+.article__content a {
   float: right;
-  margin-right: 20px;
 }
-.readmore {
+.read__more__link {
   text-decoration: none;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
@@ -150,31 +172,26 @@
   font-size: 10pt;
   color: #bf4d02;
 }
-.article-bottom {
+.article__with__title.bottom {
   margin-top: 30px;
 }
-#ourworksarticletitleicon {
+#our__works__article__title__icon {
   background-image: url(images/image2.jpg);
 }
-.articlecontent.thumbnails {
+.article__content.thumbnails {
   display: flex;
+  justify-content:space-evenly;
   flex-wrap: wrap;
 }
-.thumbcontainer {
+.thumb__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 109px;
   height: 135px;
-  margin: 10px;
+  margin-top:15px;
 }
-.thumbimage {
-  width: 109px;
-  height: 105px;
-  margin-bottom: 5px;
-  flex-shrink: 0;
-}
-.thumbcontainer a {
+.thumb__container a {
   display: inline-block;
   float: none;
   margin: 0;
@@ -183,7 +200,7 @@
   font-size: 10pt;
   color: #bf4d02;
 }
-.thumbcontainer a::after {
+.thumb__container a::after {
   display: inline-block;
   content: "";
   width: 5px;
@@ -192,7 +209,7 @@
   background-repeat: no-repeat;
   margin-left: 5px;
 }
-.thumbcontainer::after {
+.thumb__container::after {
   content: "";
   width: 108px;
   height: 1px;
@@ -201,23 +218,66 @@
   margin-top: 5px;
 }
 
-.topleft {
+.thumb__image {
+  width: 109px;
+  height: 105px;
+  margin-bottom: 5px;
+}
+.thumb__image.top__left {
   background-image: url(images/workimg1.jpg);
   background-repeat: no-repeat;
 }
-.bottomleft {
+.thumb__image.bottom__left {
   background-image: url(images/workimg2.jpg);
   background-repeat: no-repeat;
 }
-.topright {
+.thumb__image.top__right {
   background-image: url(images/workimg3.jpg);
   background-repeat: no-repeat;
 }
-.bottomright {
+.thumb__image.bottom__right {
   background-image: url(images/workimg4.jpg);
   background-repeat: no-repeat;
 }
 
+.quote__container p{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 12pt;
+  font-style: italic;
+  color:#323232
+}
+q {
+   quotes: '\201c' '\201d';
+}
+q::before {
+  position: absolute;
+  content: open-quote; 
+  color:#bf4d02;
+  font-size:48pt;
+}
+q::after {
+  position: absolute;
+  content: close-quote;
+  color:#bf4d02;
+  font-size:48pt;
+}
+.quote__container span{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14pt;
+  float: right;
+  font-weight: bold;
+  font-style: italic;
+  color:#ac8101
+}
+#developements__article__title__icon {
+  background-image: url(images/icon1.jpg);
+  background-repeat: no-repeat;
+}
+.support__image{
+background-image: url(/images/online.jpg);
+width:278px;
+height: 154px;
+}
 .footer {
   height: 204px;
   width: 100%;
