@@ -61,7 +61,7 @@ body{
 .menu__items li{
   display:inline-block;
   height:32px;
-  margin:0 15px 0 0;
+  margin:0 13px 0 0;
 }
 .menu__items a{
   display:inline-block;
@@ -101,18 +101,22 @@ body{
 }
 .body__content {
   display: flex;
+  flex-direction: row;
   width: 720px;
 }
 .column {
-display: flex;
-flex-direction: column;
-justify-content: center;
-  width: 50%;
-  padding:20px 40px 0 40px;
+width: 50%;
 }
 .column.right {
   background-color: white;
   border-radius: 0 0 10px 10px;
+}
+.column__content__container{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-evenly;
+  margin:0 41px 0;
+  height:100%;
 }
 .article__heading {
   display: flex;
@@ -148,6 +152,7 @@ justify-content: center;
   color: #967001;
 }
 .article__content h1 {
+  margin-bottom: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14pt;
   font-weight: bold;
@@ -172,29 +177,27 @@ justify-content: center;
   font-size: 10pt;
   color: #bf4d02;
 }
-.article__with__title.bottom {
-  margin-top: 30px;
-}
+
 #our__works__article__title__icon {
   background-image: url(images/image2.jpg);
 }
 .article__content.thumbnails {
   display: flex;
-  justify-content:space-evenly;
+  justify-content:space-around;
   flex-wrap: wrap;
 }
 .thumb__container {
+  margin-bottom:10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 109px;
   height: 135px;
-  margin-top:15px;
 }
 .thumb__container a {
   display: inline-block;
   float: none;
-  margin: 0;
   text-decoration: none;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 10pt;
@@ -215,13 +218,11 @@ justify-content: center;
   height: 1px;
   background-image: url(images/workdot-line.gif);
   background-repeat: no-repeat;
-  margin-top: 5px;
 }
 
 .thumb__image {
   width: 109px;
   height: 105px;
-  margin-bottom: 5px;
 }
 .thumb__image.top__left {
   background-image: url(images/workimg1.jpg);
@@ -240,31 +241,48 @@ justify-content: center;
   background-repeat: no-repeat;
 }
 
+.quote__container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height:150px;
+}
+.quote__container::after {
+  content: "";
+  height: 1px;
+  background-image: url(images/workdot-line.gif);
+}
 .quote__container p{
+  position: relative;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 12pt;
+  font-size: 11pt;
   font-style: italic;
-  color:#323232
+  color:#323232;
+  quotes: '\201c' '\201d';
 }
-q {
-   quotes: '\201c' '\201d';
-}
-q::before {
+
+.quote__container p::before {
   position: absolute;
+  top:-15px;
+  left: -30px;
   content: open-quote; 
   color:#bf4d02;
-  font-size:48pt;
+  font-size:40pt;
+  max-height:20px;
+  float:left;
 }
-q::after {
-  position: absolute;
-  content: close-quote;
+.quote__container p::after {
+  content: close-quote; 
   color:#bf4d02;
-  font-size:48pt;
+  font-size:40pt;
+  max-height:20px;
+  float:right;
 }
+
 .quote__container span{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 14pt;
-  float: right;
+  text-align: right;
   font-weight: bold;
   font-style: italic;
   color:#ac8101
@@ -272,6 +290,7 @@ q::after {
 #developements__article__title__icon {
   background-image: url(images/icon1.jpg);
   background-repeat: no-repeat;
+  background-position: center;
 }
 .support__image{
 background-image: url(/images/online.jpg);
